@@ -5,7 +5,7 @@ public class NumberToWords {
             System.out.println("Invalid Value");
         }
 
-        int num = number;
+        int num = reverse(number);
 
         while(number >= 0) {
             int lastDigit = num % 10;
@@ -62,7 +62,6 @@ public class NumberToWords {
 
         }
         while(number != 0);
-
         System.out.println(reverseNum);
         return reverseNum;
 
@@ -70,23 +69,28 @@ public class NumberToWords {
     }
 
     public static int getDigitCount(int number) {
-
         int count = 0;
-        int num = number;
+        int num = 0;
 
-        while(number >= 0) {
-            num %= 10;
-            count++;
-            num /= 10;
+        if(number < 0) {
+            System.out.println(-1);
+            return -1;
+        }
 
-            if(num / 10 < 0) {
-                break;
-            }
-
+        if(number == 0) {
+            count = 1;
             System.out.println(count);
             return count;
         }
-        System.out.println(-1);
-        return -1;
+
+        while(number != 0) {
+            number /= 10;
+            count++;
+        }
+        System.out.println(count);
+        return count;
+
+
     }
 }
+
