@@ -51,15 +51,42 @@ public class NumberToWords {
         }
     }
 
-    public static void reverse(int number) {
+    public static int reverse(int number) {
+        int reverseNum = 0;
+        int lastDigit = 0;
+
+        do {
+            lastDigit = number % 10;
+            reverseNum = (reverseNum * 10) + lastDigit;
+            number /= 10;
+
+        }
+        while(number != 0);
+
+        System.out.println(reverseNum);
+        return reverseNum;
+
 
     }
 
     public static int getDigitCount(int number) {
-        if(number < 0) {
-            return -1;
-        }
 
+        int count = 0;
+        int num = number;
+
+        while(number >= 0) {
+            num %= 10;
+            count++;
+            num /= 10;
+
+            if(num / 10 < 0) {
+                break;
+            }
+
+            System.out.println(count);
+            return count;
+        }
+        System.out.println(-1);
         return -1;
     }
 }
