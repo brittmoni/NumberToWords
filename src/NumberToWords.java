@@ -54,6 +54,7 @@ public class NumberToWords {
     public static int reverse(int number) {
         int reverseNum = 0;
         int lastDigit = 0;
+        int zeroToAdd = (getDigitCount(number)) - (getDigitCount(reverseNum));
 
         do {
             lastDigit = number % 10;
@@ -62,6 +63,7 @@ public class NumberToWords {
 
         }
         while(number != 0);
+
         System.out.println(reverseNum);
         return reverseNum;
 
