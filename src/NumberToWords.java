@@ -49,6 +49,12 @@ public class NumberToWords {
                 break;
             }
         }
+         if((getDigitCount(number)) - (getDigitCount(num)) != 0) {
+             for (int j = 0; j < (getDigitCount(number) - getDigitCount(num)); j++) {
+                 System.out.println("Zero");
+             }
+         }
+
     }
 
     public static int reverse(int number) {
@@ -64,7 +70,6 @@ public class NumberToWords {
         }
         while(number != 0);
 
-        System.out.println(reverseNum);
         return reverseNum;
 
 
@@ -75,13 +80,11 @@ public class NumberToWords {
         int num = 0;
 
         if(number < 0) {
-            System.out.println(-1);
             return -1;
         }
 
         if(number == 0) {
             count = 1;
-            System.out.println(count);
             return count;
         }
 
@@ -89,7 +92,6 @@ public class NumberToWords {
             number /= 10;
             count++;
         }
-        System.out.println(count);
         return count;
 
 
